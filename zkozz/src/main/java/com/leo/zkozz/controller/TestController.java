@@ -7,14 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 //@RequestMapping(value = {"/"})
@@ -29,11 +23,11 @@ public class TestController {
     private String version;
 
 
+    private final Environment env;
+
     public TestController(Environment env) {
         this.env = env;
     }
-
-    private final Environment env;
 
     @GetMapping("/index")
     @ApiOperation("index")
@@ -43,21 +37,24 @@ public class TestController {
 
     @GetMapping("/check")
     @ApiOperation("Check service")
-    public @ResponseBody String check() {
+    public @ResponseBody
+    String check() {
 
         return "Service is working! " + DateTime.now();
     }
 
     @GetMapping("/prop")
     @ApiOperation("Check properties")
-    public @ResponseBody  String getProperties() {
+    public @ResponseBody
+    String getProperties() {
 
         return name;
     }
 
     @GetMapping("/version")
     @ApiOperation("Check properties")
-    public @ResponseBody  String getVersion() {
+    public @ResponseBody
+    String getVersion() {
 
         return version;
     }
@@ -67,5 +64,6 @@ public class TestController {
     public String mvvm() {
         return "mvvm";
     }
+
 
 }

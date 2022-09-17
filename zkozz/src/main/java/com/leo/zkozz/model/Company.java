@@ -14,7 +14,7 @@ public class Company {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long  id;
 
     @NotNull
     @Column(name = "name", unique = true)
@@ -23,17 +23,18 @@ public class Company {
     @Enumerated(EnumType.STRING)
     private Form form;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
     @OneToMany(mappedBy = "company")
     private List<Filial> listFilials;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

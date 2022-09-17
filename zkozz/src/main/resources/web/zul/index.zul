@@ -9,6 +9,8 @@
 
 		<separator />
 
+		<button label="Fill database" href="/firstFillingDatabase"/>
+
 		<button label="Company" href="/company/list"/>
 		<button label="Address" href="/address/list"/>
 		<button label="Filial" href="/filial/list"/>

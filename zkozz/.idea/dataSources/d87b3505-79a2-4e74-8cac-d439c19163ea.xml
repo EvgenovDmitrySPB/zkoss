@@ -742,37 +742,45 @@
     <user id="232" parent="1" name="root">
       <Host>localhost</Host>
     </user>
-    <table id="233" parent="6" name="address"/>
-    <table id="234" parent="6" name="company"/>
-    <table id="235" parent="6" name="filial"/>
-    <table id="236" parent="6" name="hibernate_sequence"/>
+    <table id="233" parent="6" name="address">
+      <Engine>MyISAM</Engine>
+    </table>
+    <table id="234" parent="6" name="company">
+      <Engine>MyISAM</Engine>
+    </table>
+    <table id="235" parent="6" name="filial">
+      <Engine>MyISAM</Engine>
+    </table>
+    <table id="236" parent="6" name="hibernate_sequence">
+      <Engine>MyISAM</Engine>
+    </table>
     <column id="237" parent="233" name="id">
       <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="238" parent="233" name="index">
+    <column id="238" parent="233" name="city">
       <Position>2</Position>
-      <DataType>varchar(45)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="239" parent="233" name="city">
+    <column id="239" parent="233" name="house">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="240" parent="233" name="house">
+    <column id="240" parent="233" name="index">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="241" parent="233" name="street">
+    <column id="241" parent="233" name="room">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="242" parent="233" name="room">
+    <column id="242" parent="233" name="street">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
@@ -784,107 +792,87 @@
     </key>
     <column id="244" parent="234" name="id">
       <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="234" name="name">
+    <column id="245" parent="234" name="form">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="234" name="address_id">
+    <column id="246" parent="234" name="name">
       <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="234" name="form">
+    <column id="247" parent="234" name="address_id">
       <Position>4</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="234" name="email">
-      <Position>5</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="249" parent="234" name="UK_niu8sfil2gxywcru9ah3r4ec5">
+    <index id="248" parent="234" name="UK_niu8sfil2gxywcru9ah3r4ec5">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="250" parent="234" name="FKgfifm4874ce6mecwj54wdb3ma">
+    <index id="249" parent="234" name="FKc0m5yof4h6qpn69i2l6mxl51v">
       <ColNames>address_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="251" parent="234" name="PRIMARY">
+    <key id="250" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="252" parent="234" name="UK_niu8sfil2gxywcru9ah3r4ec5">
+    <key id="251" parent="234" name="UK_niu8sfil2gxywcru9ah3r4ec5">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>UK_niu8sfil2gxywcru9ah3r4ec5</UnderlyingIndexName>
     </key>
-    <foreign-key id="253" parent="234" name="FKgfifm4874ce6mecwj54wdb3ma">
-      <ColNames>address_id</ColNames>
-      <RefTableName>address</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="254" parent="235" name="id">
+    <column id="252" parent="235" name="id">
       <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="255" parent="235" name="name">
+    <column id="253" parent="235" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="235" name="address_id">
+    <column id="254" parent="235" name="address_id">
       <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="235" name="company_id">
+    <column id="255" parent="235" name="company_id">
       <Position>4</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="258" parent="235" name="UK_fd5ay2doxvuv00725it0myq3h">
+    <index id="256" parent="235" name="UK_fd5ay2doxvuv00725it0myq3h">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="259" parent="235" name="FKd9qnbw7inx3htea9waj91dwim">
+    <index id="257" parent="235" name="FKa54x2n338bkwwk166bbvh936v">
       <ColNames>address_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="260" parent="235" name="FKrwrfamkc7b9gw0o1dn1dqe2x0">
+    <index id="258" parent="235" name="FKgpr2gybmtcw93h1u70hs936c0">
       <ColNames>company_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="261" parent="235" name="PRIMARY">
+    <key id="259" parent="235" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="262" parent="235" name="UK_fd5ay2doxvuv00725it0myq3h">
+    <key id="260" parent="235" name="UK_fd5ay2doxvuv00725it0myq3h">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>UK_fd5ay2doxvuv00725it0myq3h</UnderlyingIndexName>
     </key>
-    <foreign-key id="263" parent="235" name="FKd9qnbw7inx3htea9waj91dwim">
-      <ColNames>address_id</ColNames>
-      <RefTableName>address</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="264" parent="235" name="FKrwrfamkc7b9gw0o1dn1dqe2x0">
-      <ColNames>company_id</ColNames>
-      <RefTableName>company</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="265" parent="236" name="next_val">
+    <column id="261" parent="236" name="next_val">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>

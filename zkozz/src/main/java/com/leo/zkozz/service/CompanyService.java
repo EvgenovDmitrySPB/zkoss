@@ -1,6 +1,7 @@
 package com.leo.zkozz.service;
 
 import com.leo.zkozz.model.Company;
+import com.leo.zkozz.model.enumeration.Form;
 import com.leo.zkozz.model.repository.CompanyRepository;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,10 @@ public class CompanyService {
 
     public List<Company> findAll() {
         return companyRepository.findAll();
+    }
+
+    public Company findById(Long id) {
+        return companyRepository.findById(id).orElse(null);
     }
 
 }

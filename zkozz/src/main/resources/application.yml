@@ -6,7 +6,8 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        globally_quoted_identifiers: true
   datasource:
     url: jdbc:mysql://localhost:3307/testDb?useSSL=false
     username: root
@@ -16,6 +17,13 @@ spring:
 #    enabled: true
 #    change-log: classpath:db/changelog/db.changelog-master.yaml
 #    contexts: dev
+
+logging:
+  level:
+    org:
+      springframework:
+        web: DEBUG
+    hibernate: ERROR
 
 zkozz:
   app-name: "zkozz local"

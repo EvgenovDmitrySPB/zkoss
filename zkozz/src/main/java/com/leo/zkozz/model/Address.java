@@ -11,7 +11,8 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    @Column(name = "id")
+    private Long  id;
 
     @Column(name = "index")
     private String index;
@@ -31,17 +32,17 @@ public class Address {
     @Column(name = "room")
     private String room;
 
-    @OneToOne(mappedBy = "address", cascade = CascadeType.ALL, optional = false, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "address")
     private Company company;
 
-    @OneToOne(mappedBy = "address", cascade = CascadeType.ALL, optional = false, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy = "address")
     private Filial filial;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -85,21 +86,21 @@ public class Address {
         this.room = room;
     }
 
-    public Company getCompany() {
-        return company;
-    }
-
-    public void setCompany(Company company) {
-        this.company = company;
-    }
-
-    public Filial getFilial() {
-        return filial;
-    }
-
-    public void setFilial(Filial filial) {
-        this.filial = filial;
-    }
+//    public Company getCompany() {
+//        return company;
+//    }
+//
+//    public void setCompany(Company company) {
+//        this.company = company;
+//    }
+//
+//    public Filial getFilial() {
+//        return filial;
+//    }
+//
+//    public void setFilial(Filial filial) {
+//        this.filial = filial;
+//    }
 
     public String getFullAddress() {
         return index + ", " +
