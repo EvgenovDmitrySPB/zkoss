@@ -1,0 +1,26 @@
+<zk>
+    <window title="${labels.company.list.title}" viewModel="@id('vm') @init('com.leo.zkozz.viewmodel.CompanyViewModel')">
+
+        <grid width="80%" model="@bind(vm.companyList)">
+            <columns>
+                <column label="Index" width="10%"/>
+                <column label="Id" width="5%"/>
+                <column label="Name" width="30%"/>
+                <column label="Form" width="10%"/>
+                <column label="Address" width="50%"/>
+            </columns>
+            <template name="model">
+                <row>
+                    <label value="@bind(forEachStatus.index)"/>
+                    <label value="@bind(each.id)"/>
+                    <label value="@bind(each.name)"/>
+                    <label value="@bind(each.form)"/>
+                    <label value="@bind(each.address.fullAddress)"/>
+                </row>
+            </template>
+        </grid>
+
+        <separator />
+        <button label="Back to home" href="/index"/>
+    </window>
+</zk>

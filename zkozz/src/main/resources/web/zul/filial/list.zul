@@ -1,0 +1,27 @@
+<zk>
+    <window title="${labels.filial.list.title}" viewModel="@id('vm') @init('com.leo.zkozz.viewmodel.FilialViewModel')">
+
+        <grid width="80%" model="@bind(vm.filialList)">
+            <columns>
+                <column label="Index" width="10%"/>
+                <column label="Id" width="5%"/>
+                <column label="Name" width="30%"/>
+                <column label="Address" width="40%"/>
+                <column label="Company" width="50%"/>
+            </columns>
+            <template name="model">
+                <row>
+                    <label value="@bind(forEachStatus.index)"/>
+                    <label value="@bind(each.id)"/>
+                    <label value="@bind(each.name)"/>
+                    <label value="@bind(each.address.fullAddress)"/>
+                    <label value="@bind(each.company.name)"/>
+                </row>
+            </template>
+        </grid>
+
+        <separator />
+
+        <button label="Back to home" href="/index"/>
+    </window>
+</zk>

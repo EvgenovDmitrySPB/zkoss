@@ -1,0 +1,28 @@
+<zk>
+    <window title="${labels.address.list.title}" viewModel="@id('vm') @init('com.leo.zkozz.viewmodel.AddressViewModel')">
+
+        <grid width="80%" model="@bind(vm.addressList)">
+            <columns>
+                <column label="Index" width="10%"/>
+                <column label="Id" width="5%"/>
+                <column label="City" width="30%"/>
+                <column label="Street" width="20%"/>
+                <column label="House" width="20%"/>
+                <column label="Room" width="20%"/>
+            </columns>
+            <template name="model">
+                <row>
+                    <label value="@bind(forEachStatus.index)"/>
+                    <label value="@bind(each.id)"/>
+                    <label value="@bind(each.city)"/>
+                    <label value="@bind(each.street)"/>
+                    <label value="@bind(each.house)"/>
+                    <label value="@bind(each.room)"/>
+                </row>
+            </template>
+        </grid>
+
+        <separator />
+        <button label="Back to home" href="/index"/>
+    </window>
+</zk>

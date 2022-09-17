@@ -1,0 +1,15 @@
+<zk>
+
+		<grid model="${list}" mold="paging" pageSize="5">
+			<columns>
+				<column  label="Subject" />
+			</columns>
+			<template name="model">
+				<row>
+					${each}
+				</row>
+			</template>
+		</grid>
+
+		<button label="updated data and refresh" id="refreshBtn" />
+</zk>

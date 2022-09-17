@@ -1,0 +1,17 @@
+<zk>
+	<window title="${labels.mvvm.title}" viewModel="@id('vm') @init('com.leo.zkozz.viewmodel.MainViewModel')">
+		Current Time (from Spring Service):
+
+		<hlayout valign="middle">
+			<label value="@load(vm.currentTime)"/>
+			<button iconSclass="z-icon-refresh" onClick="@command('updateTime')"/>
+		</hlayout>
+
+		<separator />
+
+		<button label="Company" href="/company/list"/>
+		<button label="Address" href="/address/list"/>
+		<button label="Filial" href="/filial/list"/>
+
+	</window>
+</zk>

@@ -1,0 +1,28 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      use-new-id-generator-mapping: true
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  datasource:
+    url: jdbc:mysql://localhost:3307/testDb?useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#  liquibase:
+#    enabled: true
+#    change-log: classpath:db/changelog/db.changelog-master.yaml
+#    contexts: dev
+
+zkozz:
+  app-name: "zkozz local"
+  version: "2.0"
+
+zk:
+  homepage: "demo"
+  zul-view-resolver-prefix: "/zul"
+  richlet-filter-mapping: "/richlet/*"
+  resource-uri: "/zkres"
